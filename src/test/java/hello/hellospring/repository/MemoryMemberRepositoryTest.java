@@ -1,8 +1,10 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import hello.hellospring.service.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -10,9 +12,16 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 
-class MemoryMemberRepositoryTest {
+public class MemoryMemberRepositoryTest {
 
+    MemberService memberService;
     MemberRepository repository = new MemoryMemberRepository();
+
+    @BeforeEach
+    public void beforeEach() {
+        MemberRepository memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
 
     @AfterEach
     public void afterEach() {

@@ -1,6 +1,7 @@
 package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
@@ -13,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
-    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    MemberRepository memberRepository = new MemoryMemberRepository();
+    MemberService memberService = new MemberService(memberRepository);
 
     @AfterEach
     public void afterEach() {
@@ -23,7 +24,7 @@ public class MemberServiceTest {
 
     // Test는 한국어 됨, 실제 코드에 포함되지 않기 때문
    @Test
-    void 회원가입() {
+    public void 회원가입() {
        // given
        Member member = new Member();
        member.setName("spring");

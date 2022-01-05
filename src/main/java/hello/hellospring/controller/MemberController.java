@@ -22,17 +22,24 @@ public class MemberController {
     }
 
     @GetMapping("/members/new")
-    public String createFrom() {
-        return "members/createMemberFrom";
+    public String createForm() {
+        return "members/createMemberForm";
     }
 
     @PostMapping("/members/new")
-    public String create(MemberForm from) {
+    public String create(MemberForm form) {
         Member member = new Member();
-        member.setName(from.getName());
+        member.setName(form.getName());
 
         memberService.join(member);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/members")
+    public String list(Model model) {
+        List<Member> members = memberService.findMember();
+        model.addAttribute("members", members);
+        return "members/memberList";
     }
 }

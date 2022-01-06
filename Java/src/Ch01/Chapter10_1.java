@@ -1,6 +1,6 @@
 package Ch01;
 
-public class Chapter10 {
+public class Chapter10_1 {
     public static void main(String[] args) {
 
         final int MAX_NUM = 100;

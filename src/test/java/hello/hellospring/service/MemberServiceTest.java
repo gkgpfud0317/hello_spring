@@ -23,18 +23,18 @@ public class MemberServiceTest {
     }
 
     // Test는 한국어 됨, 실제 코드에 포함되지 않기 때문
-   @Test
+    @Test
     public void 회원가입() {
-       // given
-       Member member = new Member();
-       member.setName("spring");
+        // given
+        Member member = new Member();
+        member.setName("spring");
 
-       // when
-       Long saveId = memberService.join(member);
+        // when
+        Long saveId = memberService.join(member);
 
-       // then
-       Member findMember = memberService.findOne(saveId).get();
-       assertThat(member.getName()).isEqualTo(findMember.getName());
+        // then
+        Member findMember = memberService.findOne(saveId).get();
+        assertThat(member.getName()).isEqualTo(findMember.getName());
     }
 
     @Test

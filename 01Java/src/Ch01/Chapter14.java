@@ -5,10 +5,9 @@ public class Chapter14 {
 
         int age = 6;
 
-        if(age >= 8) {
+        if (age >= 8) {
             System.out.println("학교에 다닙니다.");
-        }
-        else {
+        } else {
             System.out.println("학교에 다니지 않습니다.");
         }
 

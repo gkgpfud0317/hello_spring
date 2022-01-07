@@ -15,7 +15,7 @@ public class Chapter19 {
         int num = 1;
         int total = 0;
 
-        while ( num <= 10 ) {
+        while (num <= 10) {
             total += num;
             num++;
         }

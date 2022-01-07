@@ -15,11 +15,11 @@ public class Chapter20 {
 
         dan = 2;
         count = 1;
-        while(dan <= 9) {
+        while (dan <= 9) {
 
             count = 1;
-            while(count <= 9) {
-                System.out.println(dan + "X" + count + "=" + dan*count);
+            while (count <= 9) {
+                System.out.println(dan + "X" + count + "=" + dan * count);
                 count++;
             }
             dan++;

@@ -1,5 +1,6 @@
 package com.example.java2.controller;
 
+import com.example.java2.dto.UserRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -29,7 +30,7 @@ public class GetApiController {
 
     // https://localhost:9090/api/get/query-param?user=steve&email=steve@gmail.com&age=30
     @GetMapping(path = "query-param")
-    public String queryParam(Map<String, String> queryParam) {
+    public String queryParam(@RequestParam Map<String, String> queryParam) {
 
         StringBuilder sb = new StringBuilder();
 
@@ -43,5 +44,25 @@ public class GetApiController {
 
         return sb.toString();
 
+    }
+
+    @GetMapping("/query-param02")
+    public String queryParam02(
+            @RequestParam String name,
+            @RequestParam String email,
+            @RequestParam int age
+    ) {
+        System.out.println(name);
+        System.out.println(email);
+        System.out.println(age);
+        return name + " " + email + " " + age;
+    }
+
+    @GetMapping("/query-param03")
+    public String queryParam03(UserRequest userRequest) {
+        System.out.println(userRequest.getName());
+        System.out.println(userRequest.getEmail());
+        System.out.println(userRequest.getAge());
+        return userRequest.toString();
     }
 }

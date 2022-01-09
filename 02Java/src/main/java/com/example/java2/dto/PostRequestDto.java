@@ -2,6 +2,7 @@ package com.example.java2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class PostRequestDto {
 
     private String account;

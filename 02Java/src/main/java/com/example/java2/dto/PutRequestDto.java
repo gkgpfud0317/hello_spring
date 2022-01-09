@@ -1,12 +1,11 @@
 package com.example.java2.dto;
 
+
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-
 import java.util.List;
 
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
-// 모든 Json 룰을 적용시킬 수 있다
 public class PutRequestDto {
 
     private String name;

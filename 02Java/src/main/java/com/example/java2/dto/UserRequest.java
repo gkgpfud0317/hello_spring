@@ -1,8 +1,5 @@
 package com.example.java2.dto;
 
-
-
-
 public class UserRequest {
 
     private String name;

@@ -2,7 +2,7 @@ package com.example.java2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class CarDto {
+public class PutCarDto {
 
     private String name;
 

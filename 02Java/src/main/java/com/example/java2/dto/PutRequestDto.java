@@ -10,7 +10,7 @@ public class PutRequestDto {
 
     private String name;
     private int age;
-    private List<CarDto> carList;
+    private List<PutCarDto> carList;
 
 
     public String getName() {
@@ -29,11 +29,11 @@ public class PutRequestDto {
         this.age = age;
     }
 
-    public List<CarDto> getCarList() {
+    public List<PutCarDto> getCarList() {
         return carList;
     }
 
-    public void setCarList(List<CarDto> carList) {
+    public void setCarList(List<PutCarDto> carList) {
         this.carList = carList;
     }
 

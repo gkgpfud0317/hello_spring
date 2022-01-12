@@ -15,7 +15,9 @@ public class BoardService {
     public void create(BoardRequest request) {
         Board board = Board.builder()
                 .title(request.getTitle())
+                .content(request.getContent())
                 .build();
+
         repository.save(board);
     }
 }

@@ -24,4 +24,10 @@ public class Board {
     private String title;
 
     private String content;
+
+    public Board updateBoard(String content, String title) {
+        this.content = content;
+        this.title = title;
+        return this;
+    }
 }

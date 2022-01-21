@@ -2,6 +2,7 @@ package com.example.crud.controller;
 
 import com.example.crud.payload.request.BoardRequest;
 import com.example.crud.payload.response.BoardResponse;
+import com.example.crud.payload.response.BoardResponseList;
 import com.example.crud.service.BoardServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +41,7 @@ public class BoardController {
 
     // 리스트
     @GetMapping("/list")
-    public List<BoardResponse> list(@PathVariable int userId) {
+    public List<BoardResponseList> list(@PathVariable int userId) {
         return service.list(userId);
     }
 

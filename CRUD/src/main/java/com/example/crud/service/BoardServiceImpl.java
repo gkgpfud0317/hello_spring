@@ -4,10 +4,12 @@ import com.example.crud.entity.Board;
 import com.example.crud.entity.BoardRepository;
 import com.example.crud.payload.request.BoardRequest;
 import com.example.crud.payload.response.BoardResponse;
+import com.example.crud.payload.response.BoardResponseList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -55,4 +57,20 @@ public class BoardServiceImpl implements BoardService {
                 })
                 .orElseThrow(() -> new RuntimeException());
     }
+    // 리스트
+    @Override
+    public List<BoardResponseList> list(int userId) {
+        return repository.findByUserId(userId)
+                .stream()
+                .map(Board -> {
+                    BoardResponseList responseList = BoardResponseList.builder()
+                            .userId(Board.getId())
+                            .content(Board.getContent())
+                            .title(Board.getTitle())
+                            .build();
+                    return responseList;
+                })
+                .collect(Collectors.toList());
+    }
+
 }

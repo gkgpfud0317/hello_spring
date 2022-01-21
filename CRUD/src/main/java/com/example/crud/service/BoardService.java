@@ -2,6 +2,7 @@ package com.example.crud.service;
 
 import com.example.crud.payload.request.BoardRequest;
 import com.example.crud.payload.response.BoardResponse;
+import com.example.crud.payload.response.BoardResponseList;
 
 import java.util.List;
 
@@ -20,5 +21,5 @@ public interface BoardService {
     BoardResponse read(Integer id);
 
     // 리스트
-    List<BoardResponse> list(int userId);
+    List<BoardResponseList> list(int userId);
 }

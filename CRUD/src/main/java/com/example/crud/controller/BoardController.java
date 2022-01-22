@@ -21,6 +21,7 @@ public class BoardController {
     public void create(@Valid @RequestBody BoardRequest request) {
         service.create(request);
     }
+
     // 삭제
     @DeleteMapping("/delete")
     public void delete(@Valid @PathVariable Integer id) {

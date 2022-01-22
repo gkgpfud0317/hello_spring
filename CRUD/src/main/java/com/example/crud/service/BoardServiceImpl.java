@@ -64,7 +64,7 @@ public class BoardServiceImpl implements BoardService {
                 .stream()
                 .map(Board -> {
                     BoardResponseList responseList = BoardResponseList.builder()
-                            .userId(Board.getId())
+                            .userId(Board.getUserId())
                             .content(Board.getContent())
                             .title(Board.getTitle())
                             .build();

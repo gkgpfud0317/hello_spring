@@ -19,7 +19,7 @@ public class BoardController {
 
     private final BoardServiceImpl service;
 
-    // 수정
+    // 작성
     @PostMapping("/write")
     public void create(@Valid @RequestBody BoardRequest request) {
         service.create(request);

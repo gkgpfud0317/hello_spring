@@ -17,7 +17,7 @@ public class BoardServiceImpl implements BoardService {
 
     private final BoardRepository repository;
 
-    // 수정
+    // 작성
     @Override
     public void create(BoardRequest request) {
         Board board = repository.save(Board.builder()

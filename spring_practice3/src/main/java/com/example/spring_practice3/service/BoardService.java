@@ -21,5 +21,5 @@ public interface BoardService {
     BoardResponse read(Integer id);
 
     // List
-    List<BoardResponseList> list(Integer userId);
+    List<BoardResponseList> list(int userId);
 }

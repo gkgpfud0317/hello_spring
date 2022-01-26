@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 public class BoardResponseList {
 
-    private Integer userId;
+    private int userId;
     private String title;
     private String content;
 }

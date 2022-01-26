@@ -7,6 +7,7 @@ import com.example.spring_practice3.payload.response.BoardResponse;
 import com.example.spring_practice3.payload.response.BoardResponseList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,9 +17,11 @@ import java.util.stream.Collectors;
 public class BoardServiceImpl implements BoardService {
 
     private final BoardRepository repository;
+    private int userId;
 
     // 작성
     @Override
+    @Transactional
     public void create(BoardRequest request) {
         Board board = repository.save(Board.builder()
                 .title(request.getTitle())
@@ -28,6 +31,7 @@ public class BoardServiceImpl implements BoardService {
 
     // 삭제
     @Override
+    @Transactional
     public void delete(Integer id) {
         repository.deleteById(id);
     }
@@ -45,6 +49,7 @@ public class BoardServiceImpl implements BoardService {
 
     // GET
     @Override
+    @Transactional
     public BoardResponse read(Integer id) {
         return repository.findById(id)
                 .map(Board -> {
@@ -60,16 +65,17 @@ public class BoardServiceImpl implements BoardService {
 
     // List
     @Override
-    public List<BoardResponseList> list(Integer userId) {
+    @Transactional
+    public List<BoardResponseList> list(int userId) {
         return repository.findByUserId(userId)
                 .stream()
                 .map(Board -> {
-                    BoardResponseList responseList = BoardResponseList.builder()
-                            .userId(Board.getUserId())
-                            .title(Board.getTitle())
-                            .content(Board.getContent())
-                            .build();
-                    return responseList;
+                BoardResponseList boardResponseList = BoardResponseList.builder()
+                        .userId(Board.getId())
+                        .title(Board.getTitle())
+                        .content(Board.getContent())
+                        .build();
+                return boardResponseList;
                 })
                 .collect(Collectors.toList());
     }

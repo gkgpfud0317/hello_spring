@@ -14,8 +14,7 @@ spring:
     show-sql: true
 
   datasource:
-      url: jdbc:mysql://localhost:3306/spring_practice?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/spring_practice?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
     password: h25189230!
     driver-class-name: com.mysql.cj.jdbc.Driver
-

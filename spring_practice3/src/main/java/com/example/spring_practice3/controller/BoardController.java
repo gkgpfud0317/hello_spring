@@ -41,7 +41,7 @@ public class BoardController {
     }
 
     // list
-    public List<BoardResponseList> list(@PathVariable Integer userId) {
+    public List<BoardResponseList> list(@PathVariable int userId) {
         return service.list(userId);
     }
 }

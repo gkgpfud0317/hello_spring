@@ -17,4 +17,10 @@ public class SignController {
     public boolean checkuserIdDuplicate(@PathVariable String userId) {
         return service.checkuserIdDuplicate(userId);
     }
+
+    // 비밀번호 중복 확인
+    @GetMapping("/password/{password}/exists")
+    public boolean checkPasswordDuplicate(@PathVariable String password) {
+        return service.checkPasswordDuplicate(password);
+    }
 }

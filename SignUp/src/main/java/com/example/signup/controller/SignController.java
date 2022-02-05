@@ -14,8 +14,8 @@ public class SignController {
 
     // 아이디 중복 확인
     @GetMapping("/userId/{userId}/exists")
-    public boolean checkuserIdDuplicate(@PathVariable String userId) {
-        return service.checkuserIdDuplicate(userId);
+    public boolean checkuserIdDuplicate(@PathVariable String username) {
+        return service.checkuserIdDuplicate(username);
     }
 
     // 비밀번호 중복 확인

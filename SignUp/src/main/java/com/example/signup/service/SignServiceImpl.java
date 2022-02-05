@@ -16,8 +16,8 @@ public class SignServiceImpl implements SignService {
     private final SignRepository repository;
 
     // 아이디 중복 확인
-    public boolean checkuserIdDuplicate(String userId) {
-        return repository.existsByuserId(userId);
+    public boolean checkuserIdDuplicate(String username) {
+        return repository.existsByUsername(username);
     }
 
     // 비밀번호 중복 확인

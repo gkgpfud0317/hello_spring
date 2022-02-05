@@ -15,16 +15,6 @@ import javax.validation.constraints.Size;
 @Builder
 public class SignDto {
 
-    private Long id;
-
-    @NotBlank(message = "아이디를 입력해주세요.")
-    @Size(min = 5, max = 10, message = "아이디는 5자 이상 10자 이하로 입력해주세요.")
-    private String userId;
-
-    @NotBlank(message = "이메일 주소를 입력해주세요.")
-    @Email(message = "올바른 이메일 주소를 입력해주세요.")
-    private String email;
-
     @NotBlank(message = "이름을 입력해주세요.")
     @Size(min = 6, max = 11, message = "이름은 6자 이상 11자 이하로 입력해주세요.")
     private String username;
@@ -33,22 +23,28 @@ public class SignDto {
     @Size(min = 7, max = 12, message = "비밀번호는 7자 이상 12자 이하로 입력해주세요.")
     private String password;
 
-    @NotBlank(message = "태어난년도를 입력해주세요.")
-    private String birth;
 
-    @NotBlank(message = "성별을 선택하세요.")
-    private String gender;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     // 비밀번호 암호화
     public SignEntity toEntity() {
         return SignEntity.builder()
-                .id(id)
-                .userId(userId)
-                .email(email)
                 .username(username)
                 .password(new BCryptPasswordEncoder().encode(password))
-                .birth(birth)
-                .gender(gender)
                 .build();
     }
 }

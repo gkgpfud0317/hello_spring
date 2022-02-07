@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -41,7 +40,7 @@ public class SignDto {
     }
 
     // 비밀번호 암호화
-    public SignEntity toEntity() {
+    public SignEntity signEntity() {
         return SignEntity.builder()
                 .username(username)
                 .password(new BCryptPasswordEncoder().encode(password))

@@ -25,4 +25,11 @@ public class SignServiceImpl implements SignService {
         return repository.existsByPassword(password);
     }
 
+    // db save
+    public Long createUser(SignDto dto) {
+        SignEntity signEntity = form.entity();
+        SignRepository.save(signEntity);
+        return signEntity.getId();
+    }
+
 }

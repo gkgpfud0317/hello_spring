@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Getter
 @Builder
-public class SignEntity<B> {
+public class SignEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,6 @@
 package com.example.signup.controller;
 
-import com.example.signup.service.SignService;
+import com.example.signup.service.SignServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class SignController {
+public class UserController {
 
-    private final SignService service;
+    private final SignServiceImpl service;
 
     // 아이디 중복 확인
     @GetMapping("/userId/{userId}/exists")

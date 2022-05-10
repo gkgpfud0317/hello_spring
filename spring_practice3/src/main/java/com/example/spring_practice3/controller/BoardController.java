@@ -3,7 +3,7 @@ package com.example.spring_practice3.controller;
 import com.example.spring_practice3.payload.request.BoardRequest;
 import com.example.spring_practice3.payload.response.BoardResponse;
 import com.example.spring_practice3.payload.response.BoardResponseList;
-import com.example.spring_practice3.service.BoardService;
+import com.example.spring_practice3.service.BoardServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class BoardController {
 
-    private final BoardService service;
+    private final BoardServiceImpl service;
 
     // 작성
     @PostMapping("create")
